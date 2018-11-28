@@ -1,0 +1,64 @@
+                    @media screen and (max-width: 320px) {
+                    html {
+                        font-size: 10px;
+                    }
+                }
+                
+                @media screen and (min-width: 360px) and (max-width: 374px) {
+                    html {
+                        font-size: 12px;
+                    }
+                }
+                
+                @media screen and (min-width: 375px) and (max-width: 385px) {
+                    html {
+                        font-size: 13px;
+                    }
+                }
+                
+                @media screen and (min-width: 386px) and (max-width: 392px) {
+                    html {
+                        font-size: 14px;
+                    }
+                }
+                
+                @media screen and (min-width: 393px) and (max-width: 400px) {
+                    html {
+                        font-size: 15px;
+                    }
+                }
+                
+                @media screen and (min-width: 401px) and (max-width: 414px) {
+                    html {
+                        font-size: 16px;
+                    }
+                }
+                
+                @media screen and (min-width: 750px) and (max-width: 799px) {
+                    html {
+                        font-size: 30.72px;
+                    }
+                }
+                
+                @media screen and (orientation: landscape) and (max-height:736px) {
+                    html {
+                        font-size: 15px;
+                    }
+                }
+                
+                @media screen and (orientation: landscape) and (max-height:667px) {
+                    html {
+                        font-size: 14px;
+                    }
+                }
+                
+                @media screen and (orientation: landscape) and (max-height:568px) {
+                    html {
+                        font-size: 13px;
+                    }
+                }
+                
+                @media screen and (orientation: landscape) and (max-height:480px) {
+                    html {
+                        font-size: 12px;
+                    }
