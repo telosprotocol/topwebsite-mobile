@@ -2,9 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/index/Index'
 import ambassador from '@/pages/ambassador/Index'
+import event from '@/pages/event/Index'
+import policy from '@/pages/policy/Index'
+import terms from '@/pages/terms/Index'
+import faq from '@/pages/faq/Index'
 import pdf from 'components/pdf/pdf'
-import faq from 'components/faq/faq'
-import redeem from 'components/redeem/redeem'
+// import faq from 'components/faq/faq'
+// import redeem from 'components/redeem/redeem'
+import redeem from '@/pages/redeem/Index'
 import submitemail from 'components/whitepaper/SubmitEmail'
 import whitepdf from 'components/pdf/whitepdf'
 
@@ -28,6 +33,11 @@ export default new Router({
     component: faq
   },
   {
+    path: '/event',
+    name: 'event',
+    component: event
+  },
+  {
     path: '/redeem',
     name: 'redeem',
     component: redeem
@@ -46,6 +56,16 @@ export default new Router({
     path: '/ambassador',
     name: 'ambassador',
     component: ambassador
+  },
+  {
+    path: '/policy',
+    name: 'policy',
+    component: policy
+  },
+  {
+    path: '/terms',
+    name: 'terms',
+    component: terms
   }
   ]
 })

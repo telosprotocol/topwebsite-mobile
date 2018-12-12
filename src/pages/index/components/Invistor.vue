@@ -159,7 +159,7 @@ export default {
       position: fixed;
       left: 0;
       top: 0;
-      z-index: 999;
+      z-index: 10000;
       .video-player-box{
         height: 100%;
         width: 100%;

@@ -2,7 +2,7 @@
   <div>
     <navbar/>
     <div class="wrapper">
-      <div class="warn">Please submit your email address here. We will send the link to our white paper to your email address. </div>
+      <div class="warn">Please enter your email address here. We will send the link of our Whitepaper to your inbox.  </div>
       <input type="email" name="useremail" placeholder="Email" class="email-input" v-model="email">
       <!-- <div class="warn">*A link to our Whitepaper will be sent to submitted email</div> -->
       <div class="submit" @click="submitEmail">Submit</div>

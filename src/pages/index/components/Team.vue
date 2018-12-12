@@ -97,8 +97,8 @@
             </ul>
           </swiper-slide>
           <div class="swiper-pagination"  slot="pagination"></div>
-          <div class="swiper-button-prev" slot="button-prev"></div>
-          <div class="swiper-button-next" slot="button-next"></div>
+          <!-- <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div> -->
         </swiper>
       </div>
       <div class="line"></div>
@@ -247,7 +247,33 @@ export default {
         ],
         [
           {avatar: require('@/assets/images/otherTeam/52.png'), name: 'Feng Wang', job: 'Senior Developer'},
-          {avatar: require('@/assets/images/otherTeam/53.png'), name: 'Lauren Feng', job: 'Social Media Marketing'}
+          {avatar: require('@/assets/images/otherTeam/53.png'), name: 'Lauren Feng', job: 'Social Media Marketing'},
+          {avatar: require('@/assets/images/otherTeam/Roc liu@2x.png'), name: 'Roc Liu', job: 'Senior Product Manager'}
+        ],
+        [
+          {avatar: require('@/assets/images/otherTeam/Angelina huang@2x.png'), name: 'Angelina Huang', job: 'Senior Test Engineer'},
+          {avatar: require('@/assets/images/otherTeam/Caroline zuo@2x.png'), name: 'Caroline Zuo', job: 'Senior Test Engineer'},
+          {avatar: require('@/assets/images/otherTeam/Neville Chen@2x.png'), name: 'Neville Chen', job: 'Senior Test Engineer'}
+        ],
+        [
+          {avatar: require('@/assets/images/otherTeam/Hallie Wei@2x.png'), name: 'Hallie Wei', job: 'Senior Test Engineer'},
+          {avatar: require('@/assets/images/otherTeam/Spring yan@2x.png'), name: 'Spring Yan', job: 'Test Engineer'},
+          {avatar: require('@/assets/images/otherTeam/Ariel.jin@2x.png'), name: 'Ariel Jin', job: 'Test Engineer'}
+        ],
+        [
+          {avatar: require('@/assets/images/otherTeam/Tory xu@2x.png'), name: 'Tory Xu', job: 'Senior iOS Develope'},
+          {avatar: require('@/assets/images/otherTeam/Seal.wu@2x.png'), name: 'Seal Wu', job: 'Senior Android Developer'},
+          {avatar: require('@/assets/images/otherTeam/Section wang@2x.png'), name: 'Section Wang', job: 'Senior iOS Developer'}
+        ],
+        [
+          {avatar: require('@/assets/images/otherTeam/Bruce liu@2x.png'), name: 'Bruce Liu', job: 'Senior Web Developer'},
+          {avatar: require('@/assets/images/otherTeam/Esther Zong@2x.png'), name: 'Esther Zong', job: 'Community Manager'},
+          {avatar: require('@/assets/images/otherTeam/Ernest wang@2x.png'), name: 'Ernest Wang', job: 'Senior C++ Developer'}
+        ],
+        [
+          {avatar: require('@/assets/images/otherTeam/Jimmy xu@2x.png'), name: 'Jimmy Xu', job: 'Senior C++ Developer'},
+          {avatar: require('@/assets/images/otherTeam/Hank Chen@2x.png'), name: 'Hank Chen', job: 'Senior C++ Developer'},
+          {avatar: require('@/assets/images/otherTeam/Wing Liu@2x.png'), name: 'Wing Liu', job: 'Test Engineer'}
         ]
       ]
     }
@@ -358,25 +384,26 @@ export default {
       text-align: center;
     }
     .team-leader-list{
-      width:90%;
+      width:78%;
       margin: 1.6rem auto 0 auto;
       li{
         margin-bottom: .6rem;
         overflow: hidden;
         line-height: 2.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img{
           width:2rem;
           height:2rem;
-          float: left;
+          // float: left;
           margin-right:0.35rem;
-           vertical-align: middle;
         }
         .leader-info{
           display: inline-block;
-          width:6.41rem;
-          vertical-align: middle;
+          width:5.41rem;
           div{
-            width:6.41rem;
+            width:5.41rem;
             font-size:0.27rem;
             font-family:Arial;
             font-weight:400;
@@ -476,6 +503,9 @@ export default {
         height:1.01rem;
         top:32%;
         outline: none;
+      }
+      .swiper-container-horizontal > .swiper-pagination-bullets /deep/ .swiper-pagination-bullet{
+        margin:0 3px;
       }
       .swiper-pagination-bullets{
         bottom:-10px;
