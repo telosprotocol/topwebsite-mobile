@@ -36,12 +36,12 @@
 
       <div class="content-panel">
         <div class="title">
-          <p class="title-content">What make you an ideal TOP Network ambassador?</p>
+          <p class="title-content">What makes you an ideal TOP Network ambassador?</p>
         </div>
         <div class="act-list">
           <p class="act-item">1. A good understanding of blockchain and cryptocurrency.</p>
           <p class="act-item">2. Enthusiasm about TOP Network – you will introduce this promising project to your community.</p>
-          <p class="act-item">3. Influence in online communities or your local crypto cliques.</p>
+          <p class="act-item">3. Influence in online communities or your local crypto circles.</p>
           <p class="act-item">4. Excellent communication skills – you will communicate with community members on behalf of TOP Network.</p>
         </div>
       </div>

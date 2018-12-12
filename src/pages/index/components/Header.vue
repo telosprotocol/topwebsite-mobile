@@ -3,11 +3,8 @@
     <!--banner-->
     <div class="header">
       <swiper class="swiper swiper-container" :options="swiperOption" ref="mySwiper">
-        <swiper-slide><a @click="openVideo"><img src="@/assets/images/banner1.png"></a></swiper-slide>
-        <swiper-slide><a href="https://www.topnetwork.org/ambassador" target="_blank"><img src="@/assets/images/banner2.png"></a></swiper-slide>
-        <swiper-slide><a href="https://bitcointalk.org/index.php?topic=5070267.msg47953223#msg47953223" target="_blank"><img src="@/assets/images/banner3.png"></a></swiper-slide>
-        <swiper-slide><a href=" https://www.eventbrite.com/e/wdas-x-dorahacks-hacker-arena-tickets-51641231313" target="_blank"><img src="@/assets/images/banner4.png"></a></swiper-slide>
-        <swiper-slide><a href="https://www.topnetwork.org/testnet/#/activepage" target="_blank"><img src="@/assets/images/banner5.png"></a></swiper-slide>
+        <swiper-slide><img src="@/assets/images/banner1.png" @click="openVideo"></swiper-slide>
+        <swiper-slide v-for="(item,index) in swiperList" :key="index"><img :src="item.imagePath" @click="openUrl(item.url)"></swiper-slide>
         <div class="swiper-pagination"  slot="pagination"></div>
       </swiper>
       <transition name="fade">
@@ -16,9 +13,6 @@
           <video-player class="video-player-box" :playsinline="true" :options="playerOptions" @ended="closeVideo($event)"></video-player>
         </div>
       </transition>
-      <!-- <div class="header-title">Cloud Communication Services On Blockchain</div>
-      <div class="header-info">World's first decentralized open communication network powered by blockchain 4.0 technology</div>
-      <img src="@/assets/images/summaryBtn.png" class="summaryBtn" @click="OpenPDF()"> -->
     </div>
     <!-- banner end-->
   </div>
@@ -29,11 +23,13 @@ import 'swiper/dist/css/swiper.css'
 import {swiper, swiperSlide} from 'vue-awesome-swiper'
 import 'video.js/dist/video-js.css'
 import { videoPlayer } from 'vue-video-player'
+import {getEventBanner, getLocalBannerData} from '../../../../fetch/api'
 export default {
   name: 'Header',
   data () {
     return {
       show_video: false,
+      swiperList: [],
       playerOptions: {
         autoplay: 'any',
         muted: false,
@@ -51,9 +47,10 @@ export default {
         allowTouchMove: true,
         autoplay: {
           delay: 5000,
-          disableOnInteraction: false
+          disableOnInteraction: false// 自动切换的时间间隔，单位ms
         },
-        loop: true,
+        // loop: true,
+        // effect: 'fade',
         speed: 300,
         pagination: {
           el: '.swiper-pagination',
@@ -62,12 +59,33 @@ export default {
       }
     }
   },
+  created () {
+    this.getHomeBanner()
+  },
   components: {
     videoPlayer,
     swiper,
     swiperSlide
   },
   methods: {
+    // banner图片
+    getHomeBanner () {
+      getEventBanner(3).then(res => {
+        this.swiperList = res.data.data.banner
+        this.swiperList.forEach((value, index) => {
+          value.imagePath = 'api/' + value.imagePath
+        })
+      }).catch(res => {
+        getLocalBannerData().then(res => {
+          this.bountyList = res.data.data.bounty
+          this.swiperList = res.data.data.banner
+        })
+      })
+    },
+    // banner图片打开
+    openUrl (url) {
+      location.href = url
+    },
     OpenPDF () {
       this.$ga.event('viewPdf', 'click', 'bootBtn')
       window.open('https://www.topnetwork.org/?action=view', '_blank')
@@ -94,12 +112,13 @@ export default {
     // background-size: 100% 100%;
     .swiper{
       width:100%;
+      img{
+          width: 100%;
+          display: block;
+        }
       a{
         display: block;
         width: 100%;
-        img{
-          width: 100%;
-        }
       }
     }
     .demovideo{
@@ -112,7 +131,7 @@ export default {
       position: fixed;
       left: 0;
       top: 0;
-      z-index: 999;
+      z-index: 10000;
       .video-player-box{
         height: 100%;
         width: 100%;

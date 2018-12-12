@@ -98,10 +98,20 @@ export default {
       this.$router.push({path: 'pdf'})
     } else if (action && action === 'faq') {
       this.$router.push({path: 'faq'})
+    } else if (action && action === 'redeem') {
+      this.$router.push({path: 'redeem'})
     } else if (action && action === 'submitemail') {
       this.$router.push({path: 'submitemail'})
+    } else if (action && action === 'whitepaper') {
+      this.$router.push({path: 'whitepaper'})
     } else if (action && action === 'ambassador') {
       this.$router.push({path: 'ambassador'})
+    } else if (action && action === 'event') {
+      this.$router.push({path: 'event'})
+    } else if (action && action === 'terms') {
+      this.$router.push({path: 'terms'})
+    } else if (action && action === 'policy') {
+      this.$router.push({path: 'policy'})
     }
   }
 }

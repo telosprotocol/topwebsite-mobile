@@ -15,7 +15,7 @@
       </div>
       <div class="text text1">Single Shard <br><span>1,000</span> TPS</div>
       <div class="text text2">Single Shard Goal <br><span>2,000</span> TPS</div>
-      <div class="text text3">3 Zones,<br> 6 Shards <br><span>9,000</span> TPS</div>
+      <div class="text text3">3 Zones,<br> 10 Shards <br><span>9,000</span> TPS</div>
       <div class="text text4">5 Zones,<br> 100 Shards <br><span>50,000</span> TPS</div>
     </div>
 

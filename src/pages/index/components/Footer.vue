@@ -6,26 +6,25 @@
     </div>
     <ul class="link-list">
       <li @click="show=!show">WeChat</li>
-      <transition name="fade">
-        <img src="@/assets/images/erweima.png" class="wechat" v-if="show">
-      </transition>
       <li @click="openMedium">Medium</li>
       <li @click="openTwitter">Twitter</li>
       <li @click="openFace">Facebook</li>
       <li @click="openBlog">Blog</li>
       <li @click="openTelegram">Telegram</li>
     </ul>
+    <wechat-modal v-if="show" @modalShow="openModal"/>
     <div class="text">Copyright © 2018 Telos Foundation All rights reserved</div>
     <div class="terms-privacy">
-      <span class="terms">Terms Of Service</span>
+      <router-link to="/terms" class="terms">Terms of Service</router-link>
       <span>|</span>
-      <span class="privacy">Privacy Policy</span>
+      <router-link to="/policy" class="privacy">Privacy Policy</router-link>
     </div>
   </div>
 </template>
 
 <script>
 import {addContactInfo} from '../../../../fetch/api'
+import WechatModal from '@/pages/index/components/WechatModal'
 export default {
   name: 'Footer',
   data () {
@@ -36,7 +35,13 @@ export default {
       errEmail: ''
     }
   },
+  components: {
+    WechatModal
+  },
   methods: {
+    openModal (showBoolean) {
+      this.show = showBoolean
+    },
     openMedium () {
       window.open('https://medium.com/top-network', '_blank')
     },
@@ -187,7 +192,17 @@ export default {
         font-weight:400;
         color:rgba(65,84,99,1);
         display: inline-block;
-        margin-right:0.3rem;
+        margin:0 0.3rem;
+      }
+      .privacy{
+        color:rgba(65,84,99,1);
+        border-bottom:1px solid rgba(65,84,99,1);
+        padding-bottom:1px;
+      }
+      .terms{
+        color:rgba(65,84,99,1);
+        padding-bottom:1px;
+        border-bottom:1px solid rgba(65,84,99,1);
       }
     }
   }

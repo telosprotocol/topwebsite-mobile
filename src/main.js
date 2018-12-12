@@ -13,13 +13,13 @@ Vue.use(layer)
 
 Vue.config.productionTip = false
 Vue.use(VueAnalytics, {
-    id: 'UA-122476824-1'
+  id: 'UA-122476824-1'
 })
 
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    components: { App },
-    template: '<App/>',
-    router
+  el: '#app',
+  components: { App },
+  template: '<App/>',
+  router
 })

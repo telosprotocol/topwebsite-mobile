@@ -101,6 +101,12 @@ export default {
       this.$router.push({path: 'redeem'})
     } else if (action && action === 'ambassador') {
       this.$router.push({path: 'ambassador'})
+    } else if (action && action === 'event') {
+      this.$router.push({path: 'event'})
+    } else if (action && action === 'terms') {
+      this.$router.push({path: 'terms'})
+    } else if (action && action === 'policy') {
+      this.$router.push({path: 'policy'})
     }
   }
 }
