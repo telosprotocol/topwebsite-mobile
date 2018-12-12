@@ -1,51 +1,53 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/pages/index/Index'
-import ambassador from '@/pages/ambassador/Index'
-import pdf from 'components/pdf/pdf'
-import faq from 'components/faq/faq'
-import redeem from 'components/redeem/redeem'
-import submitemail from 'components/whitepaper/SubmitEmail'
-import whitepdf from 'components/pdf/whitepdf'
+import Login from '@/pages/login/Index'
+import Testnet from '@/pages/testnet/Testnet'
+import Wallet from '@/pages/wallet/Wallet'
+import Send from '@/pages/wallet/components/Send'
+// import activepage from '@/pages/activepage/activepage'
+import activepage from '@/pages/activepage/activepage'
+
+// import Invition from '@/pages/Invition/Invition'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
+  // base: 'testnet',
   routes: [{
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
     path: '/',
-    name: 'Index',
-    component: Index
+    name: 'Testnet',
+    component: Testnet
   },
   {
-    path: '/pdf',
-    name: 'pdf',
-    component: pdf
+    path: '/testnet/wallet',
+    name: 'Wallet',
+    component: Wallet
+
   },
   {
-    path: '/faq',
-    name: 'faq',
-    component: faq
+    path: '/testnet/wallet/send',
+    name: 'Send',
+    component: Send
   },
+    // {
+    //   path: '/activepage',
+    //   component: activepage
+    // },
+    // {
+    //   path: '/',
+    //   name: 'activepage',
+    //   component: activepage
+    // },
   {
-    path: '/redeem',
-    name: 'redeem',
-    component: redeem
-  },
-  {
-    path: '/submitemail',
-    name: 'submitemail',
-    component: submitemail
-  },
-  {
-    path: '/whitepaper',
-    name: 'whitepaper',
-    component: whitepdf
-  },
-  {
-    path: '/ambassador',
-    name: 'ambassador',
-    component: ambassador
+    path: '/activepage',
+    name: 'activepage',
+    component: activepage
   }
   ]
 })
