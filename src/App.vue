@@ -1,45 +1,42 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { getuserinfo } from '@/api/fetch'
+
 export default {
   name: 'App',
-  created() {
-    this.setUserInfo()
-    this.initCode()
+  data () {
+    return {
+    }
+  },
+  created () {
+  },
+  mounted () {
+  },
+  computed: {
   },
   methods: {
-    setUserInfo() {
-      let userInfo = localStorage.getItem('userInfoV1')
-      if (userInfo) {
-        this.$store.commit('SET_USERDATA', JSON.parse(userInfo))
-        getuserinfo().then(res => {
-          this.$store.commit('SET_USERDATA', res.data)
-        }).catch(err => {
-          console.log(err)
-        })
-      }
-    },
-    getUrlKey(name) {
-      try {
-        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [''])[1].replace(/\+/g, '%20')) || null
-      } catch (err) {
-        return
-      }
-    },
-    initCode() {
-      let code = this.getUrlKey('code')
-      if (code) {
-        this.$store.commit('setCode', code)
-      }
-    }
+  },
+  components: {
   }
 }
+
 </script>
 
-<style>
+<style lang='scss' type="text/css" scoped>
+  /* @import '../node_modules/swiper/dist/css/swiper.min.css'; */
+
+  #app {
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    height: 100%;
+    width: 100%；;
+  }
+
 </style>

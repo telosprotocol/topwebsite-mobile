@@ -193,7 +193,7 @@ sub {
 html {
     overflow-x: hidden;
     height: 100%;
-    font-size: 16px;
+    font-size: 12px;
     -webkit-tap-highlight-color: transparent;
 }
 
